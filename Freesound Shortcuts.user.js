@@ -5,6 +5,8 @@
 // @description  adds shortcuts to freesound
 // @author       Sebastien Andary
 // @match        https://freesound.org/*
+// @downloadURL  https://github.com/sebtoun/freesoundshortcuts/raw/master/Freesound%20Shortcuts.user.js
+// @updateURL    https://github.com/sebtoun/freesoundshortcuts/raw/master/Freesound%20Shortcuts.user.js
 // @grant        none
 // ==/UserScript==
 //debugger;
