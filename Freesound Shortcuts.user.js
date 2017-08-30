@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Freesound Shortcuts
 // @namespace    http://tampermonkey.net/
-// @version      0.6
+// @version      0.7
 // @description  adds shortcuts to freesound
 // @author       Sebastien Andary
 // @match        https://freesound.org/*
@@ -23,8 +23,22 @@
 
             let current = -1;
 
-            function stopCurrent(){
-                stopSound(current);
+            function toggleCurrent(){
+                if (current < 0 && current >= nSamples) {
+                    console.log("cannot toggle sample state");
+                    return;
+                }
+                var sound = getSound(current);
+                if (sound.playState === 0) {
+                    sound.play();
+                } else if (sound.paused) {
+                    sound.resume();
+                } else {
+                    sound.pause();
+                }
+            }
+            function getSound(i){
+                return soundManager.getSoundById(ids[i]);
             }
             function scrollTo(i){
                 $("html, body").scrollTop($(controls[i]).offset().top - 80);
@@ -85,20 +99,24 @@
                 sound.stop();
             }
             document.addEventListener('keydown', (event) => {
+                if (/[input|textarea|select]/i.test(event.target.tagName)) {
+                    return false;
+                }
+                event.preventDefault();
                 const keyName = event.key;
                 //console.log(keyName + " pressed");
-                if (keyName === 'n'|| keyName === "ArrowDown") {
-                    if (keyName === 'ArrowDown') event.preventDefault();
+                if (keyName === "ArrowDown") {
                     playNext(1);
-                } else if (keyName === 'p' || keyName === "ArrowUp") {
-                    if (keyName === 'ArrowUp') event.preventDefault();
+                } else if (keyName === "ArrowUp") {
                     playNext(-1);
-                } else if (keyName === 'r') {
+                } else if (keyName === ' ') {
+                    toggleCurrent();
+                } else if (keyName === 'ArrowRight') {
+                    skipSamples(1);
+                } else if (keyName === 'ArrowLeft') {
+                    skipSamples(-1);
+                } else if (keyName === "r") {
                     playNext(0);
-                } else if (keyName === 's') {
-                    stopAll();
-                } else if (keyName === 'ArrowRight' || keyName === 'ArrowLeft') {
-                    skipSamples(keyName === 'ArrowRight' ? 1 : -1);
                 }
             });
         })(jQuery.noConflict(true));

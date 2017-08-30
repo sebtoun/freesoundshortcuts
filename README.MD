@@ -8,7 +8,6 @@ Use arrow keys for navigation:
 ```
 ArrowUp/Down => play previous/next sample
 ArrowLeftRight => Skip 3 seconds on currently playing sample
-'s' => stop playing current sample
+Space => pause/resume playing of current sample
 'r' => restart current sample at the beginning
-'n'/'p' => alternatively play next/previous sample
 ```
