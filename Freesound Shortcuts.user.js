@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Freesound Shortcuts
 // @namespace    http://tampermonkey.net/
-// @version      0.10
+// @version      0.11
 // @description  adds shortcuts to freesound
 // @author       Sebastien Andary
 // @match        https://freesound.org/*
@@ -133,5 +133,8 @@
             event.preventDefault();
             playNext(0);
         }
+    });
+    $('.play').live('toggle', function(event) {
+        current = controls.index(this);
     });
 })();
