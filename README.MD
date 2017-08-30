@@ -7,7 +7,8 @@ This is a [Tampermonkey](https://tampermonkey.net/) script that add keyboard sho
 Use arrow keys for navigation:
 ```
 ArrowUp/Down => play previous/next sample
-ArrowLeftRight => Skip 3 seconds on currently playing sample
+Ctrl+ArrowUp/Down => got to next / previous results page
+ArrowLeftRight => Skip 3 seconds on currently playing sample (or 30 seconds if holding Control)
 Space => pause/resume playing of current sample
 'r' => restart current sample at the beginning
 ```
