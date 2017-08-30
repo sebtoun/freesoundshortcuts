@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Freesound Shortcuts
 // @namespace    http://tampermonkey.net/
-// @version      0.4
+// @version      0.5
 // @description  adds shortcuts to freesound
 // @author       Sebastien Andary
 // @match        https://freesound.org/*
