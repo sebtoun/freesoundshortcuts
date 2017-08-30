@@ -88,11 +88,10 @@
                 const keyName = event.key;
                 //console.log(keyName + " pressed");
                 if (keyName === 'n'|| keyName === "ArrowDown") {
-                    event.preventDefault();
+                    if (keyName === 'ArrowDown') event.preventDefault();
                     playNext(1);
-
                 } else if (keyName === 'p' || keyName === "ArrowUp") {
-                    event.preventDefault();
+                    if (keyName === 'ArrowUp') event.preventDefault();
                     playNext(-1);
                 } else if (keyName === 'r') {
                     playNext(0);
