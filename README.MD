@@ -1,6 +1,6 @@
 # Freesound Shortcuts
 
-This is a Tampermonkey script that add keyboard shortcuts to quickly navigate samples in [freesound.org](https://freesound.org)
+This is a [Tampermonkey](https://tampermonkey.net/) script that add keyboard shortcuts to quickly navigate samples in [freesound.org](https://freesound.org/)
 
 # Usage
 
