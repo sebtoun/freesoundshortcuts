@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Freesound Shortcuts
 // @namespace    http://tampermonkey.net/
-// @version      0.5
+// @version      0.6
 // @description  adds shortcuts to freesound
 // @author       Sebastien Andary
 // @match        https://freesound.org/*
@@ -98,7 +98,6 @@
                 } else if (keyName === 's') {
                     stopAll();
                 } else if (keyName === 'ArrowRight' || keyName === 'ArrowLeft') {
-                    event.preventDefault();
                     skipSamples(keyName === 'ArrowRight' ? 1 : -1);
                 }
             });
