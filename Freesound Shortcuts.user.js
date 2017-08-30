@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Freesound Shortcuts
 // @namespace    http://tampermonkey.net/
-// @version      0.7
+// @version      0.8
 // @description  adds shortcuts to freesound
 // @author       Sebastien Andary
 // @match        https://freesound.org/*
@@ -102,20 +102,25 @@
                 if (/[input|textarea|select]/i.test(event.target.tagName)) {
                     return false;
                 }
-                event.preventDefault();
                 const keyName = event.key;
                 //console.log(keyName + " pressed");
                 if (keyName === "ArrowDown") {
+                    event.preventDefault();
                     playNext(1);
                 } else if (keyName === "ArrowUp") {
+                    event.preventDefault();
                     playNext(-1);
                 } else if (keyName === ' ') {
+                    event.preventDefault();
                     toggleCurrent();
                 } else if (keyName === 'ArrowRight') {
+                    event.preventDefault();
                     skipSamples(1);
                 } else if (keyName === 'ArrowLeft') {
+                    event.preventDefault();
                     skipSamples(-1);
                 } else if (keyName === "r") {
+                    event.preventDefault();
                     playNext(0);
                 }
             });
