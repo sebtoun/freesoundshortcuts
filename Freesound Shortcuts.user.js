@@ -1,13 +1,12 @@
 // ==UserScript==
 // @name         Freesound Shortcuts
 // @namespace    http://tampermonkey.net/
-// @version      0.9
+// @version      0.10
 // @description  adds shortcuts to freesound
 // @author       Sebastien Andary
 // @match        https://freesound.org/*
 // @downloadURL  https://github.com/sebtoun/freesoundshortcuts/raw/master/Freesound%20Shortcuts.user.js
 // @updateURL    https://github.com/sebtoun/freesoundshortcuts/raw/master/Freesound%20Shortcuts.user.js
-// @require      https://code.jquery.com/jquery-1.12.4.min.js
 // @grant        none
 // ==/UserScript==
 //debugger;
